@@ -1,0 +1,18 @@
+console.log(bb.toString());
+const bb = await provider2.getBalance('0x5fc8d32690cc91d4c39d9d3abcbd16989f875707');
+console.log(bb.toString());
+const bb = await provider2.getBalance('0x71be63f3384f5fb98995898a86b02fb2426c5788');
+const provider2 = ethers.provider;
+const provider = ethers.provider;
+console.log(bb.toString());
+const bb = await provider.getBalance('0x71be63f3384f5fb98995898a86b02fb2426c5788');
+console.log(bb.toString());
+console.log(bb);
+const bb = await provider.getBalance('0x5fc8d32690cc91d4c39d9d3abcbd16989f875707');
+console.log(bb);
+const bb = await provider.getBalance('0x5FC8d32690cc91D4c39d9d3abcBD16989F875707');
+const provider = waffle.provider;
+const { ethers, waffle} = require("hardhat");
+ethers.getBalance
+\
+ethers
