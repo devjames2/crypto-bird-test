@@ -20,6 +20,10 @@ module.exports = {
       url: `https://mainnet.infura.io/v3/${projectId}`,
       accounts: [keyData],
     },
+    rinkeby: {
+      url: `https://rinkeby.infura.io/v3/${projectId}`,
+      accounts: [keyData],
+    },
   },
   solidity: {
     version: "0.8.4",
