@@ -20,7 +20,10 @@ export default function Home() {
     // what we want to load:
     // ***provider, tokenContract, marketContract, data for our marketItems***
 
-    const provider = new ethers.providers.JsonRpcProvider()
+    // const provider = new ethers.providers.JsonRpcProvider('https://polygon-mumbai.infura.io/v3/92433e74add243f2833a1634b04a9de7') // for mumbai
+    const provider = new ethers.providers.JsonRpcProvider(
+      "https://rinkeby.infura.io/v3/92433e74add243f2833a1634b04a9de7" // for rinkeby
+    );
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider)
     const marketContract = new ethers.Contract(nftmarketaddress, KBMarket.abi, provider)
     const data = await marketContract.fetchMarketTokens()
