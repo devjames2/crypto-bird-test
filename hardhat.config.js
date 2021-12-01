@@ -1,4 +1,5 @@
 require("@nomiclabs/hardhat-waffle");
+require("@openzeppelin/hardhat-upgrades");
 const projectId = "92433e74add243f2833a1634b04a9de7";
 const fs = require("fs");
 const keyData = fs.readFileSync("./p-key.txt", {

@@ -1,21 +1,22 @@
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/utils/CountersUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 // security against transactions for multiple requests
 import "hardhat/console.sol";
 
-contract KBMarket is ReentrancyGuard {
-    using Counters for Counters.Counter;
+contract KBMarket is Initializable, ERC721Upgradeable, ReentrancyGuardUpgradeable {
+    using CountersUpgradeable for CountersUpgradeable.Counter;
 
     /* number of items minting, number of transactions, tokens that have not been sold
      keep track of tokens total number - tokenId
      arrays need to know the length - help to keep track for arrays */
 
-    Counters.Counter private _tokenIds;
-    Counters.Counter private _tokensSold;
+    CountersUpgradeable.Counter private _tokenIds;
+    CountersUpgradeable.Counter private _tokensSold;
 
     // determine who is the owner of the contract
     // charge a listing fee so the owner makes a commission
@@ -24,9 +25,11 @@ contract KBMarket is ReentrancyGuard {
     // we are deploying to matic the API is the same so you can use ether the same as matic
     // they both have 18 decimal
     // 0.045 is in the cents
-    uint256 listingPrice = 0.045 ether;
+    uint256 listingPrice;
 
-    constructor() {
+    function initialize() public initializer {
+        __ReentrancyGuard_init();
+        listingPrice = 0.045 ether;
         //set the owner
         owner = payable(msg.sender);
     }
@@ -95,7 +98,7 @@ contract KBMarket is ReentrancyGuard {
         );
 
         // NFT transaction
-        IERC721(nftContract).transferFrom(msg.sender, address(this), tokenId);
+        IERC721Upgradeable(nftContract).transferFrom(msg.sender, address(this), tokenId);
 
         emit MarketTokenMinted(
             itemId,
@@ -125,7 +128,7 @@ contract KBMarket is ReentrancyGuard {
         // transfer the amount to the seller
         idToMarketToken[itemId].seller.transfer(msg.value);
         // transfer the token from contract address to the buyer
-        IERC721(nftContract).transferFrom(address(this), msg.sender, tokenId);
+        IERC721Upgradeable(nftContract).transferFrom(address(this), msg.sender, tokenId);
         idToMarketToken[itemId].owner = payable(msg.sender);
         idToMarketToken[itemId].sold = true;
         _tokensSold.increment();

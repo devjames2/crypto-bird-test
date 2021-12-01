@@ -10,13 +10,12 @@
   },
   "dependencies": {
     "@babel/core": "^7.16.0",
-    "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
     "@openzeppelin/contracts": "^4.3.2",
+    "@openzeppelin/contracts-upgradeable": "^4.4.0",
     "axios": "^0.22.0",
     "chai": "^4.3.4",
     "ethereum-waffle": "^3.4.0",
-    "ethers": "^5.5.1",
     "hardhat": "^2.6.4",
     "ipfs-http-client": "^50.1.2",
     "next": "11.1.2",
@@ -25,10 +24,13 @@
     "web3modal": "^1.9.4"
   },
   "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@openzeppelin/hardhat-upgrades": "^1.12.0",
     "add": "^2.0.6",
     "autoprefixer": "^10.3.6",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
+    "ethers": "^5.5.1",
     "postcss": "^8.3.8",
     "tailwindcss": "^2.2.16"
   }
