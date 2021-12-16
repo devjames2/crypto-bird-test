@@ -17,10 +17,15 @@ task("accounts", "👩🕵👨🙋👷 Prints the list of accounts (only for loc
 });
 
 module.exports = {
-  defaultNetwork: "bsctestnet",
+  defaultNetwork: "ganache",
   networks: {
-    hardhat: {
+    hardhat: {},
+    ganache: {
       chainId: 1337, // config standard
+      url: 'http://127.0.0.1:7545',
+      network_id: "*",
+      // gasPrice: 2000000000000,
+      accounts: ['cdb02fd697308c6b919dad9939fc9d62e1391fda1d2dd53a6017c620bf2ffae8']
     },
     mumbai: {
       url: `https://polygon-mumbai.infura.io/v3/${infuraProjectId}`,

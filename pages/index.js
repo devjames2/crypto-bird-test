@@ -1,4 +1,4 @@
-import {ethers} from 'ethers'
+import {ethers, BigNumber} from 'ethers'
 import {useEffect, useState} from 'react'
 import axios from 'axios'
 import Web3Modal from 'web3modal'
@@ -7,9 +7,10 @@ import { nftaddress, nftmarketaddress } from '../config'
 
 import NFT from '../artifacts/contracts/NFT.sol/NFT.json'
 import KBMarket from '../artifacts/contracts/KBMarket.sol/KBMarket.json'
+import NftVoucherModel from '../db/NftVoucher.model'
 
 export default function Home() {
-  const [nfts, setNFts] = useState([])
+  const [nfts, setNFTs] = useState([])
   const [loadingState, setLoadingState] = useState('not-loaded')
 
   useEffect(()=> {
@@ -23,33 +24,71 @@ export default function Home() {
     const polygonMumbaiURL = "https://polygon-mumbai.infura.io/v3/92433e74add243f2833a1634b04a9de7"
     const rinkebyURL = "https://rinkeby.infura.io/v3/92433e74add243f2833a1634b04a9de7"
     const bscTestnetURL = "https://data-seed-prebsc-2-s3.binance.org:8545"
+    const hardhat = "http://127.0.0.1:8545"
 
     // const provider = new ethers.providers.JsonRpcProvider('https://polygon-mumbai.infura.io/v3/92433e74add243f2833a1634b04a9de7') // for mumbai
     const provider = new ethers.providers.JsonRpcProvider(
-      bscTestnetURL
+      hardhat
     );
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider)
     const marketContract = new ethers.Contract(nftmarketaddress, KBMarket.abi, provider)
-    const data = await marketContract.fetchMarketTokens()
+    // const data = await marketContract.fetchMarketTokens()
 
-    const items = await Promise.all(data.map(async i => {
-      const tokenUri = await tokenContract.tokenURI(i.tokenId)
+    // const items = await Promise.all(data.map(async i => {
+    //   const tokenUri = await tokenContract.tokenURI(i.tokenId)
+    //   // we want get the token metadata - json 
+    //   const meta = await axios.get(tokenUri)
+    //   let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
+    //   let item = {
+    //     price,
+    //     tokenId: i.tokenId.toNumber(),
+    //     seller: i.seller,
+    //     owner: i.owner,
+    //     image: meta.data.image, 
+    //     name: meta.data.name,
+    //     description: meta.data.description
+    //   }
+    //   return item
+    // }))
+
+    const getMarketTokens = async () => {
+      try{
+        return axios.get('http://localhost:8080/api/vouchers');
+      } catch (err) {
+        console.error(err);
+      }
+    } 
+    
+    const marketTokens = await getMarketTokens();
+    // console.log(marketTokens)
+    // console.log(typeof(marketTokens))
+    
+    const items = await Promise.all(marketTokens.data.map(async i => {
+      // const tokenUri = await tokenContract.tokenURI(i.tokenId)
       // we want get the token metadata - json 
-      const meta = await axios.get(tokenUri)
-      let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
+      const meta = await axios.get(i.uri)
+      // console.log(meta)
+      // let price = ethers.utils.formatUnits(i.minPrice.toString(), 'ether')
       let item = {
-        price,
-        tokenId: i.tokenId.toNumber(),
+        price: i.minPrice,
+        tokenId: i.tokenId,
         seller: i.seller,
         owner: i.owner,
         image: meta.data.image, 
         name: meta.data.name,
-        description: meta.data.description
+        description: meta.data.description,
+        signature: i.signature,
+        uri: i.uri,
+        creatorAddress: i.creatorAddress,
+        royalty: i.royalty,
+        fee: i.fee
       }
+      // console.log(item)
       return item
-    }))
+    }));
+    console.log(items)
 
-    setNFts(items)
+    setNFTs(items)
     setLoadingState('loaded')
   }
 
@@ -60,10 +99,27 @@ export default function Home() {
     const connection = await web3Modal.connect()
     const provider = new ethers.providers.Web3Provider(connection)
     const signer = provider.getSigner()
-    const contract = new ethers.Contract(nftmarketaddress, KBMarket.abi, signer)
+    // const contract = new ethers.Contract(nftmarketaddress, KBMarket.abi, signer)
+    const contract = new ethers.Contract(nftaddress, NFT.abi, signer)
 
+    // const price = ethers.utils.parseUnits(nft.price.toString(), 'ether')
+    // const transaction = await contract.createMarketSale(nftaddress, nft.tokenId, {
+    //   value: price
+    // })
+    console.log(contract)
+    
+    // const signature_split = ethers.utils.splitSignature(nft.signature)
+    // const signature = ethers.utils.toUtf8Bytes(nft.signature)
+    console.log(ethers.utils.isBytesLike(nft.signature))
+
+    // console.log(signature)
+    const voucher = { tokenId: nft.tokenId, uri: nft.uri, minPrice:nft.price, signature:nft.signature, creatorAddress:nft.creatorAddress, royalty:nft.royalty, fee:nft.fee }
+    console.log(voucher)
+    console.log(await signer.getAddress())
+    // const options = {value: ethers.utils.parseEther(nft.price)}
     const price = ethers.utils.parseUnits(nft.price.toString(), 'ether')
-    const transaction = await contract.createMarketSale(nftaddress, nft.tokenId, {
+
+    const transaction = await contract.redeem(await signer.getAddress(), voucher, {
       value: price
     })
 

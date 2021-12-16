@@ -6,6 +6,10 @@ import { nftaddress, nftmarketaddress } from "../config";
 import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
 import { useRouter } from "next/router";
 import KBMarket from "../artifacts/contracts/KBMarket.sol/KBMarket.json";
+import axios from "axios";
+// import { Mongoose } from "mongoose";
+const { LazyMinter } = require('../lib')
+
 
 // in this component we set the ipfs up to host our nft data of
 // file storage
@@ -23,6 +27,7 @@ export default function MintItem() {
   const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
   // set up a function to fireoff when we update files in our form - we can add our
   // NFT images - IPFS
+
 
   async function onChange(e) {
     const file = e.target.files[0];
@@ -50,37 +55,57 @@ export default function MintItem() {
       const added = await client.add(data);
       const url = `https://ipfs.infura.io/ipfs/${added.path}`;
       // run a function that creates sale and passes in the url
-      createSale(url);
+      createSale(url, price);
     } catch (error) {
       console.log("Error uploading file:", error);
     }
   }
 
-  async function createSale(url) {
+  async function createSale(url, price) {
     // create the items and list them on the marketplace
     const web3Modal = new Web3Modal();
     const connection = await web3Modal.connect();
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
 
-    // we want to create the token
+    // we want to create the nft-voucher
     let contract = new ethers.Contract(nftaddress, NFT.abi, signer);
-    let transaction = await contract.mintToken(url);
-    let tx = await transaction.wait();
-    let event = tx.events[0];
-    let value = event.args[2];
-    let tokenId = value.toNumber();
-    const price = ethers.utils.parseUnits(formInput.price, "ether");
+    const lazyMinter = new LazyMinter({ contract, signer })
+    const tokenId = Math.floor(Math.random() * 1000000);
+    const creatorAddress = await signer.getAddress();
+    const voucher = await lazyMinter.createVoucher(tokenId, url, price, creatorAddress, 1, 1)
+    console.log(voucher)
 
-    // list the item for sale on the marketplace
-    contract = new ethers.Contract(nftmarketaddress, KBMarket.abi, signer);
-    let listingPrice = await contract.getListingPrice();
-    listingPrice = listingPrice.toString();
+    axios.post('http://localhost:8080/api/voucher',{
+      voucher
+    }
+    ).then((response) => console.log(response))
+    .catch((error) => console.log(error));
 
-    transaction = await contract.makeMarketItem(nftaddress, tokenId, price, {
-      value: listingPrice,
-    });
-    await transaction.wait();
+    // mongoosClient.collection('lazymint-test').insertOne( voucher )
+    // MongoClient
+    // NftVoucher.save(error => {
+    //   if (checkServerError(res, error)) return;
+    //   res.status(201).json(voucher);
+    //   console.log('NftVoucher created successfully!');
+    // });
+
+    // let transaction = await contract.mintToken(url);
+    // let tx = await transaction.wait();
+    // let event = tx.events[0];
+    // let value = event.args[2];
+    // let tokenId = value.toNumber();
+    // const price = ethers.utils.parseUnits(formInput.price, "ether");
+
+    // // list the item for sale on the marketplace
+    // contract = new ethers.Contract(nftmarketaddress, KBMarket.abi, signer);
+    // let listingPrice = await contract.getListingPrice();
+    // listingPrice = listingPrice.toString();
+
+    // transaction = await contract.makeMarketItem(nftaddress, tokenId, price, {
+    //   value: listingPrice,
+    // });
+    // await transaction.wait();
     router.push("./");
   }
 
