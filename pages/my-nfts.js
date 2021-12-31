@@ -90,7 +90,7 @@ export default function MyAssets() {
     // console.log(userEthNFTs)
 
     // get polygon NFTs for address
-    const options = { chain: 'rinkeby', address: '0xcEA695c0F108833f347239bB2f05CEF06F6a7658' };
+    const options = { chain: 'rinkeby', address: '0xcea695c0F108833f347239bB2f05CEF06F6a7658' };
     const rinkebyNFTs = await Moralis.Web3API.account.getNFTs(options);
     console.log(rinkebyNFTs)
 

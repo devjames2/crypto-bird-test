@@ -55,30 +55,43 @@ export default function MintItem() {
       const added = await client.add(data);
       const url = `https://ipfs.infura.io/ipfs/${added.path}`;
       // run a function that creates sale and passes in the url
-      createSale(url, price);
+      createSale(name, url, price);
     } catch (error) {
       console.log("Error uploading file:", error);
     }
   }
 
-  async function createSale(url, price) {
+  async function createSale(name, url, price) {
     // create the items and list them on the marketplace
     const web3Modal = new Web3Modal();
     const connection = await web3Modal.connect();
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
 
+    let voucher 
+    // get voucher from server
+    await axios.get(`http://localhost:8080/items/vouchers/${nftaddress}/34`)
+    .then((response) => {
+      console.log(response['data'])
+      voucher = response['data'];
+    })
+    .catch((error) => console.log(error));
+
+    console.log(voucher)
     // we want to create the nft-voucher
     let contract = new ethers.Contract(nftaddress, NFT.abi, signer);
     const lazyMinter = new LazyMinter({ contract, signer })
-    const tokenId = Math.floor(Math.random() * 1000000);
-    const creatorAddress = await signer.getAddress();
-    const voucher = await lazyMinter.createVoucher(tokenId, url, price, creatorAddress, 1, 1)
-    console.log(voucher)
+    const tokenId = Math.floor(Math.random() * 1000000).toString();
+    // const creatorAddress = await signer.getAddress();
+    const minPrice = 1
+    const royalty = 1;
+    const fee = 1;
+    const sellItem = await lazyMinter.createSellItem(voucher, tokenId, minPrice, royalty, fee)
+    console.log(sellItem)
 
-    axios.post('http://localhost:8080/api/voucher',{
-      voucher
-    }
+    await axios.post('http://localhost:8080/items/sell',
+      sellItem
+    
     ).then((response) => console.log(response))
     .catch((error) => console.log(error));
 

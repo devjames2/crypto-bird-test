@@ -48,6 +48,8 @@ contract NFT is ERC721URIStorage, EIP712, AccessControl {
         /// @notice the EIP-712 signature of all other fields in the NFTVoucher struct. For a voucher to be valid, it must be signed by an account with the MINTER_ROLE.
         bytes signature;
         /// @notice Creator Wallet Address
+        address owner;
+        /// @notice Creator Wallet Address
         address creatorAddress;
         /// @notice royalty for creators
         uint256 royalty;
@@ -75,9 +77,13 @@ contract NFT is ERC721URIStorage, EIP712, AccessControl {
         // make sure that the redeemer is paying enough to cover the buyer's cost
         require(msg.value >= voucher.minPrice, "Insufficient funds to redeem");
 
-        //eth transfer X
-        address payable receiver = payable(voucher.creatorAddress);
-        receiver.transfer(msg.value);
+        //eth transfer 
+        address payable owner_receiver = payable(voucher.owner);
+        owner_receiver.transfer(msg.value * (100 - voucher.royalty)/100);
+
+        address payable creator_receiver = payable(voucher.creatorAddress);
+        creator_receiver.transfer(msg.value *voucher.royalty/100);
+
         // first assign the token to the signer, to establish provenance on-chain
         _mint(signer, voucher.tokenId);
         _setTokenURI(voucher.tokenId, voucher.uri);
@@ -86,7 +92,7 @@ contract NFT is ERC721URIStorage, EIP712, AccessControl {
         _transfer(signer, redeemer, voucher.tokenId);
 
         // record payment to signer's withdrawal balance
-        pendingWithdrawals[signer] += msg.value;
+        // pendingWithdrawals[signer] += msg.value;
 
         return voucher.tokenId;
     }
@@ -124,11 +130,15 @@ contract NFT is ERC721URIStorage, EIP712, AccessControl {
                 keccak256(
                     abi.encode(
                         keccak256(
-                            "NFTVoucher(uint256 tokenId,uint256 minPrice,string uri)"
+                            "NFTVoucher(uint256 tokenId,uint256 minPrice,string uri, address owner, address creatorAddress, uint256 royalty, uint256 fee)"
                         ),
                         voucher.tokenId,
                         voucher.minPrice,
-                        keccak256(bytes(voucher.uri))
+                        keccak256(bytes(voucher.uri)),
+                        voucher.owner,
+                        voucher.creatorAddress,
+                        voucher.royalty,
+                        voucher.fee
                     )
                 )
             );
