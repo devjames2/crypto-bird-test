@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@babel/core": "^7.16.0",
-    "@openzeppelin/contracts": "^4.3.2",
     "axios": "^0.22.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -31,6 +30,7 @@
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/contracts": "^4.4.1",
     "add": "^2.0.6",
     "autoprefixer": "^10.3.6",
     "chai": "^4.3.4",
@@ -42,7 +42,7 @@
     "postcss": "^8.3.8",
     "tailwindcss": "^2.2.16"
   },
-  "browser":{
+  "browser": {
     "child_process": false
-    }  
+  }
 }

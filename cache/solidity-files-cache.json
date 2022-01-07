@@ -1,48 +1,9 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/home/nike/GIT/crypto-bird-test/contracts/KBMarket.sol": {
-      "lastModificationDate": 1639402241129,
-      "contentHash": "c777f86bffbeb0973336002bda7d5bd4",
-      "sourceName": "contracts/KBMarket.sol",
-      "solcConfig": {
-        "version": "0.8.4",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@openzeppelin/contracts/token/ERC721/ERC721.sol",
-        "@openzeppelin/contracts/security/ReentrancyGuard.sol",
-        "@openzeppelin/contracts/utils/Counters.sol",
-        "hardhat/console.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.4"
-      ],
-      "artifacts": [
-        "KBMarket"
-      ]
-    },
     "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol": {
-      "lastModificationDate": 1639410713836,
-      "contentHash": "a4f6dccf3f15b6844e357f737a572388",
+      "lastModificationDate": 1641389622783,
+      "contentHash": "ead7082e39cf31875ff89b22f473500d",
       "sourceName": "@openzeppelin/contracts/token/ERC721/ERC721.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -83,8 +44,8 @@
       ]
     },
     "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/security/ReentrancyGuard.sol": {
-      "lastModificationDate": 1639410714764,
-      "contentHash": "53fbff678f378956efcb207fa748eaa6",
+      "lastModificationDate": 1641389622839,
+      "contentHash": "92f9448b23a90ea3bb932ee55cc3ccce",
       "sourceName": "@openzeppelin/contracts/security/ReentrancyGuard.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -117,8 +78,8 @@
       ]
     },
     "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/utils/Counters.sol": {
-      "lastModificationDate": 1639410713176,
-      "contentHash": "b7811964d33f23b2d45ed3ebb76a4548",
+      "lastModificationDate": 1641389622747,
+      "contentHash": "74654e3ae5d7f39555055dfe244dab7a",
       "sourceName": "@openzeppelin/contracts/utils/Counters.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -185,8 +146,8 @@
       ]
     },
     "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol": {
-      "lastModificationDate": 1639410714460,
-      "contentHash": "53919d6975f2c0f3dffee5e3a1064116",
+      "lastModificationDate": 1641389622823,
+      "contentHash": "27d219ec6f69478d065fdbfa7931da68",
       "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -221,8 +182,8 @@
       ]
     },
     "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
-      "lastModificationDate": 1639410714500,
-      "contentHash": "9a367cecca6fed80a3e975b7e6b3bd5c",
+      "lastModificationDate": 1641389622823,
+      "contentHash": "592df588492d45fdcf46b3cb608c0fbf",
       "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -255,8 +216,8 @@
       ]
     },
     "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
-      "lastModificationDate": 1639410714480,
-      "contentHash": "8aa69ca8424167555baaaa9f607801db",
+      "lastModificationDate": 1641389622823,
+      "contentHash": "efbc0d15b80a74e34dbe8da0f3e879bb",
       "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -291,8 +252,8 @@
       ]
     },
     "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/utils/Address.sol": {
-      "lastModificationDate": 1639410713056,
-      "contentHash": "c5f6c4e4df069c789e7d84b4c3011913",
+      "lastModificationDate": 1641389622743,
+      "contentHash": "4cff8b2ea0d958750786b4e3ca308445",
       "sourceName": "@openzeppelin/contracts/utils/Address.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -325,8 +286,8 @@
       ]
     },
     "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/utils/Context.sol": {
-      "lastModificationDate": 1639410713172,
-      "contentHash": "851485d5b925529b1a2f34a0be077891",
+      "lastModificationDate": 1641389622747,
+      "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
       "sourceName": "@openzeppelin/contracts/utils/Context.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -359,8 +320,8 @@
       ]
     },
     "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/utils/Strings.sol": {
-      "lastModificationDate": 1639410714872,
-      "contentHash": "62142442bed149f965c5ed971fae4182",
+      "lastModificationDate": 1641389622847,
+      "contentHash": "9c54c6c065d9e590fdcdd72c451425b9",
       "sourceName": "@openzeppelin/contracts/utils/Strings.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -393,8 +354,8 @@
       ]
     },
     "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
-      "lastModificationDate": 1639410713484,
-      "contentHash": "a9a5319dff9088c6ffe757ea1c2a6729",
+      "lastModificationDate": 1641389622763,
+      "contentHash": "0e7db055ce108f9da7bb6686a00287c0",
       "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -429,8 +390,8 @@
       ]
     },
     "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
-      "lastModificationDate": 1639410714388,
-      "contentHash": "9a04322bb8f6b8f2767d8358d1d2537b",
+      "lastModificationDate": 1641389622811,
+      "contentHash": "03e6768535ac4da0e9756f1d8a4a018a",
       "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -462,50 +423,9 @@
         "IERC165"
       ]
     },
-    "/home/nike/GIT/crypto-bird-test/contracts/NFT.sol": {
-      "lastModificationDate": 1640879989388,
-      "contentHash": "ea553a69fef7cb1fdcc7348937645bee",
-      "sourceName": "contracts/NFT.sol",
-      "solcConfig": {
-        "version": "0.8.4",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "hardhat/console.sol",
-        "@openzeppelin/contracts/access/AccessControl.sol",
-        "@openzeppelin/contracts/token/ERC721/ERC721.sol",
-        "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
-        "@openzeppelin/contracts/utils/cryptography/ECDSA.sol",
-        "@openzeppelin/contracts/utils/cryptography/draft-EIP712.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.4"
-      ],
-      "artifacts": [
-        "NFT"
-      ]
-    },
     "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol": {
-      "lastModificationDate": 1639410713988,
-      "contentHash": "94da923c22e9773af388607307182c80",
+      "lastModificationDate": 1641389622791,
+      "contentHash": "580a443491d9d70eb064b0130fc3cd01",
       "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -540,8 +460,8 @@
       ]
     },
     "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/access/AccessControl.sol": {
-      "lastModificationDate": 1639410713008,
-      "contentHash": "74fb01cf14d85fd1e7f25b22c6472e6e",
+      "lastModificationDate": 1641389622739,
+      "contentHash": "79af4d35ce7918696f13f0cb6653ec99",
       "sourceName": "@openzeppelin/contracts/access/AccessControl.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -579,8 +499,8 @@
       ]
     },
     "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/utils/cryptography/ECDSA.sol": {
-      "lastModificationDate": 1639410713304,
-      "contentHash": "197dbfaf7146845fa76331a4c9980e9f",
+      "lastModificationDate": 1641389622751,
+      "contentHash": "395edffd6bb2b3ba29970d5814039654",
       "sourceName": "@openzeppelin/contracts/utils/cryptography/ECDSA.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -604,7 +524,9 @@
           }
         }
       },
-      "imports": [],
+      "imports": [
+        "../Strings.sol"
+      ],
       "versionPragmas": [
         "^0.8.0"
       ],
@@ -613,8 +535,8 @@
       ]
     },
     "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/utils/cryptography/draft-EIP712.sol": {
-      "lastModificationDate": 1639410713204,
-      "contentHash": "549712dc273f006b866af22f6fb3cadc",
+      "lastModificationDate": 1641389622751,
+      "contentHash": "161aae4dc1450371d0f324488f66a9cf",
       "sourceName": "@openzeppelin/contracts/utils/cryptography/draft-EIP712.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -649,8 +571,8 @@
       ]
     },
     "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/access/IAccessControl.sol": {
-      "lastModificationDate": 1639410714252,
-      "contentHash": "e2ed3260ca37d27f68b0ab41f692b407",
+      "lastModificationDate": 1641389622803,
+      "contentHash": "57c84298234411cea19c7c284d86be8b",
       "sourceName": "@openzeppelin/contracts/access/IAccessControl.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -680,6 +602,531 @@
       ],
       "artifacts": [
         "IAccessControl"
+      ]
+    },
+    "/home/nike/GIT/crypto-bird-test/contracts/NFT1155.sol": {
+      "lastModificationDate": 1641477141645,
+      "contentHash": "295b198fedaeb506fc5df31fb30f65d6",
+      "sourceName": "contracts/NFT1155.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "@openzeppelin/contracts/token/ERC1155/presets/ERC1155PresetMinterPauser.sol",
+        "@openzeppelin/contracts/utils/cryptography/ECDSA.sol",
+        "@openzeppelin/contracts/utils/cryptography/draft-EIP712.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "NFT1155"
+      ]
+    },
+    "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/token/ERC1155/presets/ERC1155PresetMinterPauser.sol": {
+      "lastModificationDate": 1641389622759,
+      "contentHash": "8773b453e91060696c36c838f7ba56f0",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/presets/ERC1155PresetMinterPauser.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../ERC1155.sol",
+        "../extensions/ERC1155Burnable.sol",
+        "../extensions/ERC1155Pausable.sol",
+        "../../../access/AccessControlEnumerable.sol",
+        "../../../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC1155PresetMinterPauser"
+      ]
+    },
+    "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol": {
+      "lastModificationDate": 1641389622755,
+      "contentHash": "1d68a32647e54f6acd6ff471d940ef4c",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/ERC1155.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC1155.sol",
+        "./IERC1155Receiver.sol",
+        "./extensions/IERC1155MetadataURI.sol",
+        "../../utils/Address.sol",
+        "../../utils/Context.sol",
+        "../../utils/introspection/ERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC1155"
+      ]
+    },
+    "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Burnable.sol": {
+      "lastModificationDate": 1641389622755,
+      "contentHash": "b9f23167c71a0ebb43ef5915b463a264",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Burnable.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../ERC1155.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC1155Burnable"
+      ]
+    },
+    "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Pausable.sol": {
+      "lastModificationDate": 1641389622759,
+      "contentHash": "8c76f015a31a093020b83ba53a33c84d",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Pausable.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../ERC1155.sol",
+        "../../../security/Pausable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC1155Pausable"
+      ]
+    },
+    "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/access/AccessControlEnumerable.sol": {
+      "lastModificationDate": 1641389622743,
+      "contentHash": "ed8cb66146e00c05d3435beedacd0a9f",
+      "sourceName": "@openzeppelin/contracts/access/AccessControlEnumerable.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IAccessControlEnumerable.sol",
+        "./AccessControl.sol",
+        "../utils/structs/EnumerableSet.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AccessControlEnumerable"
+      ]
+    },
+    "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155.sol": {
+      "lastModificationDate": 1641389622807,
+      "contentHash": "59e1bc5713fdebc7f821dc52f4d3e0ef",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC1155"
+      ]
+    },
+    "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol": {
+      "lastModificationDate": 1641389622811,
+      "contentHash": "90eddd06deda7317b4441f04ec26db4d",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC1155Receiver"
+      ]
+    },
+    "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/token/ERC1155/extensions/IERC1155MetadataURI.sol": {
+      "lastModificationDate": 1641389622807,
+      "contentHash": "9148c2e10c4efb12c71a7f080da5559b",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/extensions/IERC1155MetadataURI.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC1155.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC1155MetadataURI"
+      ]
+    },
+    "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/security/Pausable.sol": {
+      "lastModificationDate": 1641389622835,
+      "contentHash": "9c2dccab8e3a43a18c41e358763fe4d8",
+      "sourceName": "@openzeppelin/contracts/security/Pausable.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Pausable"
+      ]
+    },
+    "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/access/IAccessControlEnumerable.sol": {
+      "lastModificationDate": 1641389622803,
+      "contentHash": "4e71cc90682e109e999ce2bd329f6572",
+      "sourceName": "@openzeppelin/contracts/access/IAccessControlEnumerable.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IAccessControl.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IAccessControlEnumerable"
+      ]
+    },
+    "/home/nike/GIT/crypto-bird-test/node_modules/@openzeppelin/contracts/utils/structs/EnumerableSet.sol": {
+      "lastModificationDate": 1641389622755,
+      "contentHash": "b8070bbbb327a49a4d37f5c590b38238",
+      "sourceName": "@openzeppelin/contracts/utils/structs/EnumerableSet.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "EnumerableSet"
+      ]
+    },
+    "/home/nike/GIT/crypto-bird-test/contracts/KBMarket.sol": {
+      "lastModificationDate": 1641401990266,
+      "contentHash": "c777f86bffbeb0973336002bda7d5bd4",
+      "sourceName": "contracts/KBMarket.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+        "@openzeppelin/contracts/security/ReentrancyGuard.sol",
+        "@openzeppelin/contracts/utils/Counters.sol",
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "KBMarket"
+      ]
+    },
+    "/home/nike/GIT/crypto-bird-test/contracts/NFT.sol": {
+      "lastModificationDate": 1641402072356,
+      "contentHash": "ea553a69fef7cb1fdcc7348937645bee",
+      "sourceName": "contracts/NFT.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "@openzeppelin/contracts/access/AccessControl.sol",
+        "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+        "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
+        "@openzeppelin/contracts/utils/cryptography/ECDSA.sol",
+        "@openzeppelin/contracts/utils/cryptography/draft-EIP712.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "NFT"
       ]
     }
   }
